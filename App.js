@@ -1,26 +1,37 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { firebase } from '@react-native-firebase/auth';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator} from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyB0N7ZMbRBLCnjpQ7RWTtBHhZxbldUTSsA",
-  authDomain: "ovium-1075a.firebaseapp.com",
-  projectId: "ovium-1075a",
-  storageBucket: "ovium-1075a.appspot.com",
-  messagingSenderId: "278625508680",
-  appId: "1:278625508680:web:a3cbe8424e1e0feef9a77d",
-  measurementId: "G-XGKZVDKHBH"
-};
+import HomeScreen from './screens/Home/HomeScreen.js';
+import SettingsScreen from './screens/Settings/SettingsScreen.js';
+import ReelScreen from './screens/Reel/ReelScreen.js';
+import CreateScreen from './screens/Create/CreateScreen.js';
+import LoginScreen from './screens/Auth/LoginScreen.js';
 
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
+
+const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+function HomeTabs() {
+  return (
+    <Tab.Navigator initialRouteName={"Home"} >
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Create" component={CreateScreen} />
+      <Tab.Screen name="Login" component={LoginScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
+  );
 }
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Welcome to Ovium Fitness</Text>
-    </View>
+    <NavigationContainer>
+    <Stack.Navigator initialRouteName={"HomeTabs"} screenOptions={{headerShown:false}}>
+      <Stack.Screen name="HomeTabs" component={HomeTabs}/>
+    </Stack.Navigator>
+  </NavigationContainer>
   );
 }
 
