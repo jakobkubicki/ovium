@@ -11,6 +11,7 @@ import ReelScreen from './screens/Reel/ReelScreen.js';
 import CreateScreen from './screens/Create/CreateScreen.js';
 import LoginScreen from './screens/Auth/LoginScreen.js';
 import SearchScreen from './screens/Search/SearchScreen.js';
+import ProfileScreen from './screens/Profile/ProfileScreen.js';
 
 
 const Tab = createBottomTabNavigator();
@@ -22,9 +23,8 @@ function HomeTabs() {
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Search" component={SearchScreen} />
       <Tab.Screen name="Create" component={CreateScreen} />
-      <Tab.Screen name="Login" component={LoginScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
-
+      <Tab.Screen name="Reel" component={ReelScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 }
