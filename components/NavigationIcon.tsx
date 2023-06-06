@@ -8,19 +8,19 @@ interface NavigationIconProps {
 }
 
 const  NavigationIcon = ({route, isFocused}: NavigationIconProps) => {
-  const renderIcon = (route: string, isFocues: boolean) =>{
+  const renderIcon = (route: string, isFocus: boolean) =>{
     let height: number = 20;
     let width: number = 20;
     
     switch (route) {
       case "Home":
-        return isFocues? <Ionicons name="md-checkmark-circle" size={16}  color="green" /> :  <Ionicons name="md-checkmark-circle" size={32} color="green" />
+        return isFocus? <Ionicons name="home" size={20}  color="white" /> :  <Ionicons name="home" size={20}  color="white"/>
       case "Login":
-        return isFocues? <Ionicons name="md-checkmark-circle" size={16}  color="green" /> :  <Ionicons name="md-checkmark-circle" size={32} color="green" />
+        return isFocus? <Ionicons name="log-in" size={20}  color="white" /> :  <Ionicons name="log-in" size={20} color="white" />
       case "Create":
-        return isFocues? <Ionicons name="md-checkmark-circle" size={16}  color="green" /> :  <Ionicons name="md-checkmark-circle" size={32} color="green" />
+        return isFocus? <Ionicons name="add" size={20}  color="white" /> :  <Ionicons name="add" size={20} color="white" />
       case "Settings":
-        return isFocues? <Ionicons name="md-checkmark-circle" size={16}  color="green" /> :  <Ionicons name="md-checkmark-circle" size={32} color="green" />
+        return isFocus? <Ionicons name="settings" size={20}  color="white" /> :  <Ionicons name="settings" size={20} color="white" />
       default:
         break;
     }
