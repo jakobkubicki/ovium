@@ -21,7 +21,9 @@ const  NavigationIcon = ({route, isFocused}: NavigationIconProps) => {
         return isFocus? <Ionicons name="add" size={20}  color="white" /> :  <Ionicons name="add" size={20} color="white" />
       case "Settings":
         return isFocus? <Ionicons name="settings" size={20}  color="white" /> :  <Ionicons name="settings" size={20} color="white" />
-      default:
+        case "Search":
+            return isFocus? <Ionicons name="search" size={20}  color="white" /> :  <Ionicons name="search" size={20} color="white" />
+    default:
         break;
     }
   }
