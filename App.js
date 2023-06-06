@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator} from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import TabBar from './components/TabBar.tsx';
 
 import HomeScreen from './screens/Home/HomeScreen.js';
 import SettingsScreen from './screens/Settings/SettingsScreen.js';
@@ -16,7 +17,7 @@ const Stack = createStackNavigator();
 
 function HomeTabs() {
   return (
-    <Tab.Navigator initialRouteName={"Home"} >
+    <Tab.Navigator initialRouteName={"Home"} tabBar={props => <TabBar {...props} />}>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Create" component={CreateScreen} />
       <Tab.Screen name="Login" component={LoginScreen} />
